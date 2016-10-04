@@ -1,0 +1,20 @@
+{
+  "name": "resume",
+  "authors": [
+    "lxynox <lxybitren@live.com>"
+  ],
+  "description": "resume built with some frontend little tricks☺︎",
+  "main": "index.js",
+  "keywords": [
+    "resume"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
