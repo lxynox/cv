@@ -1,46 +1,8 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-@import url(//fonts.googleapis.com/css?family=Permanent+Marker|Bad+Script:regular|Baumans|ansita+One:regular|Bungee+Shade|Candal|Chewy|Codystar|Comfortaa|Fredericka+the+Great|Gochi+Hand|Monofett|Permanent+Marker|Poiret+One|Press+Start+2P|Rock+Salt|Waiting+for+the+Sunrise);
 @import "compass/css3";
-
-// icons
-$prev-icon:	'⬆';
-$next-icon:	'⬇';
-
-// colors
-// material design base
-$blue: #2196F3;
-$pink: #E91E63;
-$red: #F44336;
-$indigo: #3F51B5;
-$teal: #42CFCC;
-$purple: #C540D6;
-$burnt: #E88E2E;
-$grey: #616161;
-$dpurple: #694486;
-$bpurple: #B487B9;
-// fundamental colors
-$circle-menu-active: #607D8B;
-$circle-menu-even: #BCAAA4;
-$circle-menu-odd: rgba(241, 196, 15, 0.1);
-$quick-btn-active: $bpurple;
-$main-section: #333;
-$main-title: #FFAB40;
-$main-list-item:#EEE8D5;
-$bash-color:  #00D900;
-$table-bg: #34495E;
-$table-th-color: #000;
-$prev-next-bg: rgba(255,255,255,0);
-$prev-next-bg-hover: rgba(255,255,255,0.1);
-
-// fonts
-$primary-font: 'Baumans', fantasy, cursive, monospaceserif, sans-serif;
-$secondary-font: Helvetica, Avenir, Courier; 
-$title-font: Chalkduster, fantasy, Georgia;
-$anchor-font: 'Permanent Marker', 'Comfortaa', 'Chewy', cursive;
-$table-th-font:  'Sansita One', SegoePrint;
-$bash-font: Menlo, monospace, sans-serif;
+@import "variable";
 
 //  utils
 @function sqrt($r) {
@@ -60,7 +22,7 @@ $golden_ratio: (sqrt(5) - 1) / 2;
     z-index: 1;
     top: 0;
     border-radius: 0 0 20px 20px;
-    // animation 
+    // animation
     color: $blue;
     transition: background 500ms ease-in-out, color 500ms ease-in-out, box-shadow 500ms ease-in-out;
     &:hover {
@@ -75,11 +37,10 @@ $golden_ratio: (sqrt(5) - 1) / 2;
     border-radius: 20px 20px 0 0;
 
     color: $teal;
-    box-shadow:  0 0 0 0 $blue, inset 0 0 0 0 $teal;
-    transition: box-shadow 300ms ease-in-out, color 300ms ease-in-out;
+    transition: background 500ms ease-in-out, color 500ms ease-in-out, box-shadow 500ms ease-in-out;
     &:hover {
         color: $grey;
-        box-shadow: 0 0 10px 0 $teal, inset 0 0 200px 5px $teal;
+        box-shadow: 0 0 20px 0 $teal, inset 0 0 200px 5px $teal;
     }
 }
 .hidden { display: none; }
@@ -95,53 +56,48 @@ $golden_ratio: (sqrt(5) - 1) / 2;
     }
 }
 
-
-
-.wrapper {
-    // background-color: transparent;
-    font-family: $primary-font;
-    outline: 5px magenta dotted;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: stretch;
+html, body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }
-.box {
-    margin: 0 auto;
-    #text-align: center;
+.wrapper {
+    height: 100%;
+    font-family: $primary-font;
+
+    display: flex;
+    flex-direction: row;
 }
 .box-left {
-    flex: 1 1 (1 - $golden_ratio) * 100%;
+    flex: 1;
+    overflow: hidden;
+
     background-color: $dpurple;
-    min-width: 200px;
+
     display: flex;
     flex-flow: column nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 .box-right {
-    position: relative;
-    flex: 1 1 $golden_ratio * 100%;
+    flex: 2.5;
+
     background-color: $main-section;
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: flex-start;
-    align-items: center;
 }
 
 
 #sidebar {
     .circle-menu {
         position: relative;
-        min-width: 400px;
-        min-height: 400px;
+        min-width: 320px;
+        min-height: 320px;
         margin: 50px auto;
         box-shadow: 0 0 10px #ccc;
         ul {
             position: absolute;
             width: 300px;
             height: 300px;
-            margin: 50px;
-            padding: 0;
+            margin: 10px;
             list-style: none;
             border-radius: 50%;
             overflow: hidden;
@@ -198,7 +154,20 @@ $golden_ratio: (sqrt(5) - 1) / 2;
     .img {
         width: 150px;
         height: 150px;
-        background-image: url(http://www.wallpapersdb.org/wallpapers/cats/cute_cat_praying_1920x1200.jpg);
+        background-image: url({{site.baseurl}}/img/profile.jpg);
+        background-position:  center;
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    #sidebar {
+        display: none;
+    }
+    #main {
+        .btn {
+            left: 50% !important;
+        }
     }
 }
 
@@ -207,9 +176,9 @@ $golden_ratio: (sqrt(5) - 1) / 2;
         @extend .hidden;
         height: 30px;
         padding-top:  10px;
-        min-width:  20%;
-        // margin-left:  -10%;
-        left:  60%;
+        width: 150px; 
+        margin-left:  -75px;
+        left:  66%;
         text-align: center;
     }
     &:hover {
@@ -336,21 +305,22 @@ $golden_ratio: (sqrt(5) - 1) / 2;
         }
         .cell {
             display: table-cell;
+            text-align: left;
             strong {
                 color: $circle-menu-active;
-                font-size: 2em;
-                font-family: Monofett, 'Gochi Hand', 'Permanent Marker', 'Poiret One', fantasy;
+                font-size: 1.6em;
+                font-family: 'Gochi Hand', 'Permanent Marker', 'Poiret One', fantasy;
             }
         }
         p {
             font-size:  2em;
-            font-family: Monofett, 'Gochi Hand', 'Permanent Marker', 'Poiret One', fantasy;
+            font-family: 'Gochi Hand', 'Permanent Marker', 'Poiret One', fantasy;
         }
     }
     .skills {
         .lang-pro {
             li {
-                background-image: 
+                background-image:
                 linear-gradient(
                 90deg,
                 darken(#9E9E9E, 20%) 10px,
@@ -364,12 +334,12 @@ $golden_ratio: (sqrt(5) - 1) / 2;
         }
         .framework {
             li {
-                background-image: 
+                background-image:
                 linear-gradient(
                 90deg,
                 darken(#9E9D24, 10%) 10px,
                 #EEE 10px,
-                #EEE 11px, 
+                #EEE 11px,
                 transparent 11px);
                 &:before {
                     // content: '♧'；
@@ -378,26 +348,26 @@ $golden_ratio: (sqrt(5) - 1) / 2;
         }
         .software {
             li {
-                background-image: 
+                background-image:
                 linear-gradient(
                 90deg,
                 darken(#009688, 10%) 10px,
                 #EEE 10px,
-                #EEE 11px, 
+                #EEE 11px,
                 transparent 11px);
                 &:before {
                     // content: '♡'；
                 }
-            } 
+            }
         }
         .lang {
             li {
-                background-image: 
+                background-image:
                 linear-gradient(
                 90deg,
                 darken(#F18060, 10%) 10px,
                 #EEE 10px,
-                #EEE 11px, 
+                #EEE 11px,
                 transparent 11px);
                 &:before {
                     // content: '♢'；
@@ -405,9 +375,6 @@ $golden_ratio: (sqrt(5) - 1) / 2;
             }
         }
         table {
-            // using mobile first method (IE8,7 requires respond.js polyfill https://github.com/scottjehl/Respond)
-            $breakpoint-alpha: 400px; 
-
             background: $table-bg;
             border-radius: .4em;
             overflow: hidden;
@@ -430,39 +397,9 @@ $golden_ratio: (sqrt(5) - 1) / 2;
                 &:last-child {
                     padding-bottom: .5em;
                 }
-                &:before {
-                    content: attr(data-th)": "; // who knew you could do this? The internet, that's who.
-                    font-weight: bold;
-                    // optional stuff to make it look nicer
-                    width: 6.5em; // magic number :( adjust according to your own content
-                    display: inline-block;
-                    // end options
-                    @media (min-width: $breakpoint-alpha) {
-                        display: none;
-                    }
-                }
             }
             th, td {
                 margin: .5em 1em;
-                // border:  1px ridge #000000;
-                @media (min-width: $breakpoint-alpha) { 
-                    padding: 1em !important; 
-                }
-                @media (min-width: $breakpoint-alpha) {
-                    display: table-cell;
-                    padding: .25em .5em;
-
-                    &:first-child {
-                        padding-left: 0;
-                    }
-
-                    &:last-child {
-                        padding-right: 0;
-                    }
-                    &:before {
-                        color: #dd5;
-                    }
-                }
             }
         }
         ul {
@@ -581,8 +518,8 @@ $golden_ratio: (sqrt(5) - 1) / 2;
 
     }
     font-family: $secondary-font;
-    width: 90%;
     text-align: center;
+    margin: auto 40px;
     h2 {
         font-family: $title-font;
         color: $bpurple;

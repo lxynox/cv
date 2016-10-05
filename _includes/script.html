@@ -1,3 +1,8 @@
+{% if jekyll.environment == 'development' %}
 <script type='text/javascript' src="{{site.baseurl}}/js/main.js"></script>
-<!-- <script type='javascript/text' src="{{site.baseurl}}"></script> -->
-<!-- <script type='javascript/text' src="{{site.baseurl}}"></script> -->
+<script type='text/javascript' src="{{site.baseurl}}/js/vendor.js"></script>
+<!-- <script type='text/javascript' src="{{site.baseurl}}"></script> -->
+{% elsif jekyll.environment == 'production' %}
+<script type='text/javascript' src="{{site.baseurl}}/build/all.min.js"></script>
+{% endif %}
+
