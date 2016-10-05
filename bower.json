@@ -16,5 +16,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "fullpage.js": "fullpage#^2.8.6",
+    "typed": "*",
+    "jquery": "^3.1.1"
+  }
 }

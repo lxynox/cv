@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="{{site.baseurl}}/css/main.css" />
 
     <!-- TODO: toggle between production/dev mode -->
-    {% if jekyll.environment == "production" %}
+    {% if jekyll.environment == "development" %}
     <!-- vendors: jQuery, fullpage.js, typed.js -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.min.css" />
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.8.6/jquery.fullPage.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js"></script>
+    {% else %}
+    <script type="text/javascript" src="{{site.baseurl}}/vendor/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{{site.baseurl}}/vendor/jquery.fullpage.min.css" />
+    <script type="text/javascript" src="{{site.baseurl}}/vendor/jquery.fullpage.min.js"></script>
+    <script type="text/javascript" src="{{site.baseurl}}/vendor/typed.min.js"></script>
+
     {% endif %}
 
     {% if site.favicon %}

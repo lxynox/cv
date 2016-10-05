@@ -1,0 +1,39 @@
+@import url(//fonts.googleapis.com/css?family=Permanent+Marker|Bad+Script:regular|Baumans|ansita+One:regular|Bungee+Shade|Candal|Chewy|Codystar|Comfortaa|Fredericka+the+Great|Gochi+Hand|Monofett|Permanent+Marker|Poiret+One|Press+Start+2P|Rock+Salt|Waiting+for+the+Sunrise);
+
+// icons
+$prev-icon:	'⬆';
+$next-icon:	'⬇';
+
+// colors
+// material design base
+$blue: #2196F3;
+$pink: #E91E63;
+$red: #F44336;
+$indigo: #3F51B5;
+$teal: #42CFCC;
+$purple: #C540D6;
+$burnt: #E88E2E;
+$grey: #616161;
+$dpurple: #694486;
+$bpurple: #B487B9;
+// fundamental colors
+$circle-menu-active: #607D8B;
+$circle-menu-even: #BCAAA4;
+$circle-menu-odd: rgba(241, 196, 15, 0.1);
+$quick-btn-active: $bpurple;
+$main-section: #333;
+$main-title: #FFAB40;
+$main-list-item:#EEE8D5;
+$bash-color:  #00D900;
+$table-bg: #34495E;
+$table-th-color: #000;
+$prev-next-bg: rgba(255,255,255,0);
+$prev-next-bg-hover: rgba(255,255,255,0.1);
+
+// fonts
+$primary-font: 'Baumans', fantasy, cursive, monospaceserif, sans-serif;
+$secondary-font: Helvetica, Avenir, Courier; 
+$title-font: Chalkduster, fantasy, Georgia;
+$anchor-font: 'Permanent Marker', 'Comfortaa', 'Chewy', cursive;
+$table-th-font:  'Rock Salt', 'Waiting for the Sunrise' , SegoePrint;
+$bash-font: Menlo, monospace, sans-serif;

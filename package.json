@@ -1,0 +1,31 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "personal resume",
+  "main": "index.js",
+  "scripts": {
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxynox/cv.git"
+  },
+  "keywords": [
+    "resume",
+    "front-end"
+  ],
+  "author": "lxynox",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lxynox/cv/issues"
+  },
+  "homepage": "https://github.com/lxynox/cv#readme",
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^2.0.0"
+  }
+}
