@@ -253,13 +253,11 @@ html, body {
             100% { opacity:1; }
         }
         .description {
-            font-family:  'Fredericka the Great', fantasy;
+            font-family: Candara, fantasy;
             line-height:  2em;
             color: darken($main-list-item, 40%);
             span {
-                font-family: $bash-font;
-                font-size: 1.2em;
-                font-style:  bold;
+                font-weight:  bold;
             }
         }
     }
@@ -376,7 +374,7 @@ html, body {
             }
         }
         table {
-            background: $table-bg;
+            // background: $table-bg;
             border-radius: .4em;
             overflow: hidden;
             margin: 1em auto;
@@ -387,8 +385,8 @@ html, body {
                 border-bottom: 1px solid #ddd;
             }
             th {
-                font-family: $table-th-font;
-                color:  $table-th-color;
+                font-family: $anchor-font;
+                color: darken($main-list-item, 40%);
             }
             td {
                 vertical-align:  baseline;
@@ -420,7 +418,6 @@ html, body {
             list-style: none;
             background-color: rgba(0, 0, 0, 0.05);
             padding: 10px 15px 10px 25px;
-            box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5);
 
             width: 100%;
             box-sizing: border-box;
